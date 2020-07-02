@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AppBar from './components/navbar/navbar';
+import MyChart from './components/chart/chart';
+import DropDown from './components/dropDown/dropDown';
+import News from './components/news/news';
+import AboutLSD from './components/AboutLSD/AboutLSD';
+import ContactUs from './components/ContactUs/ContactUs'
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+     <AppBar/>
       </header>
+      <div className="mui-row" id="mui-row">
+       <MyChart/>
+       <DropDown/>
+      </div>
+      <News/>
+      <AboutLSD/>
+      <ContactUs/>
+      <Footer/>
     </div>
   );
 }

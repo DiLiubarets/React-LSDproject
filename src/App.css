@@ -1,38 +1,338 @@
-.App {
+/* body css */
+body {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    font-size: 16px;
+  }
+  
+  /* standard button styling  */
+  .mui-btn {
+    background-image: linear-gradient(
+      to top,
+      #09203f 0%,
+      #537895 100%
+    ) !important;
+    padding-left: 2em;
+  }
+  .mui-btn a:hover{
+    color:honeydew;
+  }
+  /* app-bar  */
+  .mui-appbar {
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  }
+  .mui--text-title {
+    color: goldenrod;
+  }
+  
+  img {
+    width: 70px;
+    height: 70px;
+  }
+  /* responsive navbar menu */
+  #smallScreen{
+    margin-right: 1em;
+    color:goldenrod;
+    font-size: 20px;
+  }
+  #smallScreen:hover{
+    cursor: pointer;
+  }
+  
+  
+  ul.mui-list--inline {
+    margin-right: 3em;
+    font-size: 17px;
+  }
+  
+  header a {
+    color: white;
+  }
+  
+  header table {
+    width: 100%;
+  }
+  
+  /* dropdown menu */
+  .mui-btn--primary {
+    background-image: linear-gradient(
+      to top,
+      #09203f 0%,
+      #537895 100%
+    ) !important;
+    padding-left: 2em;
+  }
+  
+  #dropDown-menu {
+    margin-left: 65%;
+    padding-left: 1em;
+  }
+  .mui-btn--flat,
+  #submitEmail {
+    color: #ffffff;
+  }
+  
+  .mui-dropdown__menu li:hover {
+    background: linear-gradient(to top, #09203f 0%, #537895 100%);
+    color:white;
+    cursor:context-menu;
+  }
+  
+  /* padding inside drop-douwn */
+  #timeDropdown,  #currentCoin{
+    text-align: center;
+  }
+  
+  
+  /* mychart */
+  .chart-container {
+    margin-left: 3em;
+  }
+  
+  #mui-row {
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 4em;
+  }
+  
+  /* contact form */
+  
+  #inputName, #inputEmail, #inputMessage {
+    font-size: 1em;
+  }
+  
+  
+  #contact-us {
+    width: 50%;
+    margin: auto;
+    margin-top: 5em;
+    border-radius: 15px;
+  }
+  
+  #contact-form legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* CryptoNews */
+  #crypto-news{
+    margin-top: 3em;
+  }
+  
+  /* cards style */
+  .card-example {
+    position: relative;
+    background-color: #fff;
+  }
+  
+  .card-example img {
+    width: 100%;
+    height: 70%;
+  }
+  
+  .card-example span.title {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+  }
+  
+  a {
+    font-weight: 800;
+  }
+  
+  
+  .fa-bitcoin {
+    color: goldenrod;
+  }
+  
+  ul {
+    padding-left: 0;
+  }
+  
+  .aGithub {
+    padding-bottom: 20px;
+  }
+  
+  
+  /* modal */
+  .modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5); 
+  }
+  
+  .modal-header{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  border-radius: 20px 20px 0px 0px;
+  padding:10px;
+  padding-bottom: 25px;
+  color: goldenrod;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .modal-footer{
+    text-align: center;
+    padding: 0px 0px 15px 0px;
+    margin: 0;
+    color: #ccc;
   }
-  to {
-    transform: rotate(360deg);
+  .modal-dates{
+    float: right;
+    color: #ccc;
   }
-}
+  
+  #modal-body{
+    position: relative;
+    z-index: 1;
+    width: 75%;
+    background-color: honeydew;
+    border-radius: 20px;
+    margin: 10% auto;
+  }
+  
+  #modal-links{
+    padding: 25px;
+  }
+  
+  #close-modal{
+    float: right;
+    color: #ccc;
+    font-size: 25px;
+  }
+  #close-modal:hover{
+    color: black;
+    cursor: pointer;
+  }
+  
+  /* About LSD */
+  .mui--text-body2 h3 {
+    font-weight: 750;
+  }
+  #about-project {
+    font-size: 1rem;
+  }
+  
+  h2{
+    display: inline !important;
+    color:goldenrod;
+    padding-left: 1em;
+  }
+  h4 a{
+    color: black;
+  }
+  button a {
+    color: black;
+  }
+  /* footer */
+  footer {
+    margin-top: 5em;
+    box-sizing: border-box;
+    height: 70px;
+    width: 100%;
+    background-color: #eee;
+    padding-top: 20px;
+  }
+  
+  @media (min-width: 468px){
+    #description{
+      float: left;
+    }
+  }
+  
+  @media(max-width: 720px){
+    #bigScreen{
+      display: none;
+    }
+    #smallScreen{
+      display:block;
+      top: 10px;
+    }
+  }
+  
+  @media(min-width:720px){
+    #smallScreen{
+      display:none;
+      border-radius: 50px;
+      background-color: #09203f;
+    }
+  }
+  
+  /* Dark Mode Button */
+  .theme-switch-wrapper {
+    display:flex ;
+    position: absolute;
+    right: 1%;
+    bottom: 30%;
+  }
+  
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: #818cab;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  
+  @media(max-width: 720px){
+    #bigScreen{
+      display: none;
+    }
+    #smallScreen{
+      display:block
+    }
+  }
+  @media(min-width:720px){
+    #smallScreen{
+      display:none;
+    }
+  }
+  
+  
