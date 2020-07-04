@@ -1,7 +1,45 @@
 import React from 'react';
+import $ from 'jquery';
 
-export default function ContactUs () {
 
+class ContactUs extends React.Component {
+  componentDidMount() {
+  $("#submitEmail").click(function (e) {
+    var name = $("#inputName").val();
+    var email = $("#inputEmail").val();
+    var message = $("#inputMessage").val();
+  
+    if (name == "" || email == "" || message == "") {
+      // console.log("fail");
+      return false;
+    } else {
+      e.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var url = "https://formspree.io/xwkrpzap";
+      var method = "POST";
+      var data = new FormData();
+      data.append("email", email);
+      data.append("name", name);
+      data.append("message", message);
+  
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          // console.log("success");
+          status.innerHTML = "Thanks! Your message was send.";
+        } else {
+          // console.log("error");
+          status.innerHTML = "Oops! There was a problem.";
+        }
+      };
+      xhr.send(data);
+    }
+  });
+  }
+  render() {
   return (
     <div className="mui-panel" id="contact-us">
     <div className="mui-container">
@@ -26,5 +64,6 @@ export default function ContactUs () {
         </form>
     </div>
     </div>
-);
+)};
   }
+  export default ContactUs;

@@ -1,10 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import $ from 'jquery'
+import Moment from 'react-moment'
 
 
-export default function News () {
-
-
+class News extends React.Component {
+  componentDidMount() {
+    var today =  <Moment format="YYYY/MM/DD">{this.props.dateToFormat}</Moment> 
+    const urlNews = 'https://cors-anywhere.herokuapp.com/' + "https://newsapi.org/v2/everything?language=en&q=bitcoin&from="+ today +"&sortBy=publishedAt&apiKey=46f225ffb36d463dbf82d74ee65a1700"
+    
+    $.ajax({
+      url: urlNews,
+      method: "GET",
+    }).then(function (response) {
+      //console.log(response)
+      for (let i=0; i<6; i++){
+        var articles = response.articles
+        // console.log(articles)
+        var title = response.articles[i].title
+        var description = response.articles[i].description
+        var explore = response.articles[i].url
+        var image = response.articles[i].urlToImage
+        // console.log(explore)
+        $('#title'+ i).text(title)
+        $('#des' + i).text(description)
+        $('#link-button' + i).attr('href',explore)
+        $('#card-img' + i).attr('src', image)
+      }
+      
+    });
+    }
+    render() {
   return (
   <div>
     <div
@@ -129,4 +154,5 @@ export default function News () {
     </div>
   </div>
 );
-  }
+  }}
+  export default News;
