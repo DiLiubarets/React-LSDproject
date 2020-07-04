@@ -2,7 +2,7 @@
 # React-LSDproject
 
 
-Live Demo: 
+Live Demo: https://diliubarets.github.io/React-LSDproject/
 
 
-Converting jquery project to React framework 
+Converting LSD project to React framework 
