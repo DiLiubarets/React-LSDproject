@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/React-LSDproject/static/css/main.5c66b332.chunk.css",
+    "main.js": "/React-LSDproject/static/js/main.1699c962.chunk.js",
+    "main.js.map": "/React-LSDproject/static/js/main.1699c962.chunk.js.map",
+    "runtime-main.js": "/React-LSDproject/static/js/runtime-main.87faf8fe.js",
+    "runtime-main.js.map": "/React-LSDproject/static/js/runtime-main.87faf8fe.js.map",
+    "static/js/2.a3b12551.chunk.js": "/React-LSDproject/static/js/2.a3b12551.chunk.js",
+    "static/js/2.a3b12551.chunk.js.map": "/React-LSDproject/static/js/2.a3b12551.chunk.js.map",
+    "index.html": "/React-LSDproject/index.html",
+    "precache-manifest.dae4ed0f308c373b2693169bf75a6f66.js": "/React-LSDproject/precache-manifest.dae4ed0f308c373b2693169bf75a6f66.js",
+    "service-worker.js": "/React-LSDproject/service-worker.js",
+    "static/css/main.5c66b332.chunk.css.map": "/React-LSDproject/static/css/main.5c66b332.chunk.css.map",
+    "static/js/2.a3b12551.chunk.js.LICENSE.txt": "/React-LSDproject/static/js/2.a3b12551.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87faf8fe.js",
+    "static/js/2.a3b12551.chunk.js",
+    "static/css/main.5c66b332.chunk.css",
+    "static/js/main.1699c962.chunk.js"
+  ]
+}
