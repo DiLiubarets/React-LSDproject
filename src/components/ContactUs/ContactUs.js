@@ -1,19 +1,18 @@
 import React from 'react';
-import $ from 'jquery';
-
 
 class ContactUs extends React.Component {
-  componentDidMount() {
-  $("#submitEmail").click(function (e) {
-    var name = $("#inputName").val();
-    var email = $("#inputEmail").val();
-    var message = $("#inputMessage").val();
+
+  sendEmail(e) {
+    e.preventDefault();
+    var name = document.getElementById("inputName").value;
+    var email = document.getElementById("inputEmail").value;
+    var message = document.getElementById("inputMessage").value;
   
-    if (name == "" || email == "" || message == "") {
+    if (name === "" || email === "" || message === "") {
       // console.log("fail");
       return false;
     } else {
-      e.preventDefault();
+     
       var status = document.getElementById("my-form-status");
       var url = "https://formspree.io/xwkrpzap";
       var method = "POST";
@@ -28,16 +27,18 @@ class ContactUs extends React.Component {
       xhr.onreadystatechange = function () {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
-          // console.log("success");
+          console.log("success");
           status.innerHTML = "Thanks! Your message was send.";
         } else {
-          // console.log("error");
+          console.log("error");
           status.innerHTML = "Oops! There was a problem.";
         }
+
       };
       xhr.send(data);
+      
     }
-  });
+  
   }
   render() {
   return (
@@ -57,7 +58,7 @@ class ContactUs extends React.Component {
             <textarea id="inputMessage" required></textarea>
             <label>Message</label>
           </div>
-          <button id="submitEmail" type="submit" className="mui-btn mui-btn--flat">
+          <button onClick={this.sendEmail} id="submitEmail" type="button" className="mui-btn mui-btn--flat">
             Submit
           </button>
           <p id="my-form-status"></p>

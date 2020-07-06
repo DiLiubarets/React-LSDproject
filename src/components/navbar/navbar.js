@@ -5,7 +5,7 @@ export default function AppBar() {
 
 
   return (
-    <div>
+    
     <Appbar>
     <table>
       <tbody>
@@ -34,12 +34,32 @@ export default function AppBar() {
                 <a href="#crypto-news"><span className="mui-text mui-caret--right">News</span></a>
               </li>
             </ul>
+            <div class="mui-dropdown mui-dropdown--left" id="smallScreen">
+              <span data-mui-toggle="dropdown">
+                <i class="fa fa-bars"> </i>
+              </span>
+
+              <ul id="siteNav" className="mui-dropdown__menu">
+                <li>
+                  <a href="#body"><span className="mui-text mui-caret--right">Chart</span></a>
+                </li>
+                <li>
+                  <a href="#crypto-news"><span className="mui-text mui-caret--right">News</span></a>
+                </li>
+                <li>
+                  <a href="#about-project"><span className="mui-text mui-caret--right">About LSD</span></a>
+                </li>
+                <li>
+                  <a href="#contact-us"><span className="mui-text mui-caret--right">Contact Us</span></a>
+                </li>
+              </ul>
+            </div>
           </td>
         </tr>
         </tbody>
       </table>
   </Appbar>
-  </div>
+  
   );
 }
 

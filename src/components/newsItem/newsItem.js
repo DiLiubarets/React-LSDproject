@@ -7,17 +7,17 @@ class NewsItem extends React.Component {
     if (this.props.data) {      
       for (var i=0; i < 6; i++){
 
-        news.push(   <div key={i} class="mui-col-md-4">
-        <div  class="card-example mui--text-center mui--z1">
-          <img src={this.props.data[i].urlToImage} id="card-img" />
-          <div class="label">
+        news.push(   <div key={i} className="mui-col-md-4">
+        <div  className="card-example mui--text-center mui--z1">
+          <img src={this.props.data[i].urlToImage} id="card-img" alt="crypto news"/>
+          <div className="label">
             <br />
             <div
               id="title"
-              class="title mui--text-dark mui--text-headline"
+              className="title mui--text-dark mui--text-headline"
             > {this.props.data[i].title} </div>
             <br />
-            <button class="mui-btn mui-btn--flat">
+            <button className="mui-btn mui-btn--flat">
               <a href={this.props.data[i].url}>Explore</a>
             </button>
           </div>
@@ -32,10 +32,10 @@ class NewsItem extends React.Component {
 
     <div id="cryptoNews">
       <br />
-      <div class="mui--text-display4 mui--text-center"> NEWS</div>
-  <div class="mui-container">
-  <div class="mui-row">{news.splice(0,3)}</div>
-  <div class="mui-row">{news}</div>
+      <div className="mui--text-display4 mui--text-center"> NEWS</div>
+  <div className="mui-container">
+  <div className="mui-row">{news.splice(0,3)}</div>
+  <div className="mui-row">{news}</div>
   </div> 
   </div>)
   }

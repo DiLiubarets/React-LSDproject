@@ -8,7 +8,8 @@ import NewsItem from "./components/newsItem/newsItem"
 import AboutLSD from "./components/AboutLSD/AboutLSD";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
-import $ from "jquery";
+import axios from "axios";
+
 
 var massPopChart;
 var arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -101,8 +102,7 @@ class App extends React.Component {
     globalIntervalString = intervalString;
     globalIntervalNum = intervalNum;
 
-    //set description
-    //$("#description").html(aboutCoin[coin]);
+   
     // title for coins
     massPopChart.options.title.text = coin.toUpperCase();
 
@@ -135,12 +135,8 @@ class App extends React.Component {
   }
 
   getLivePrice(queryURL) {
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      var price = parseFloat(parseFloat(response.data.rateUsd).toFixed(3));
-      console.log(price);
+    axios.get(queryURL).then(function (response) {
+      var price = parseFloat(parseFloat(response.data.data.rateUsd).toFixed(3));
       arr[arr.length - 1] = price;
 
       // for moving average live
@@ -159,15 +155,13 @@ class App extends React.Component {
 
       massPopChart.update();
     });
+  
   }
 
   getHistorical(queryURL) {
     var self = this
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      var data = response.data;
+    axios.get(queryURL).then(function (response) {
+      var data = response.data.data;
       var delta = data.length - arr.length;
       var i = delta;
       for (i; i < data.length; i++) {
@@ -185,13 +179,10 @@ class App extends React.Component {
     var today =  <Moment format="YYYY/MM/DD">{this.props.dateToFormat}</Moment> 
     const urlNews = 'https://cors-anywhere.herokuapp.com/' + "https://newsapi.org/v2/everything?language=en&q=" + coin + "&from="+ today +"&sortBy=publishedAt&apiKey=46f225ffb36d463dbf82d74ee65a1700"
     
-    $.ajax({
-      url: urlNews,
-      method: "GET",
-    }).then(function (response) {
+    axios.get(urlNews).then(function (response) {
       //console.log(response)
       //var art = response.articles
-      context.setState({articles: response.articles})
+      context.setState({articles: response.data.articles})
       
     });
   }
